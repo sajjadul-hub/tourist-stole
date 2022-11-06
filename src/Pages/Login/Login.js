@@ -1,22 +1,10 @@
-import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login1 from '../../assets/images/login/login.svg'
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import SocialLogin from '../SocialLogin/SocialLogin';
 const Login = () => {
-    const { login,providerLogin } = useContext(AuthContext);
-
-
-    const googleProvider = new GoogleAuthProvider();
-    const handleGoogleSignIn = () => {
-        providerLogin(googleProvider)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .catch(error => console.error(error))
-    };
+    const { login} = useContext(AuthContext);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -37,7 +25,7 @@ const Login = () => {
                 }
                 console.log(currentUser);
                 // get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://genius-car-server-silk.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -49,7 +37,7 @@ const Login = () => {
                         console.log(data)
                         // local storage is the easiest but not the best place to store jwt token
                         localStorage.setItem('genius', data.token)
-                        navigate(from,{replace:true});
+                        navigate(from, { replace: true });
                     });
             })
             .catch(error => console.log(error))
@@ -82,12 +70,10 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <input style={{ backgroundColor: " #FF3811" }} className="btn border-0" type="submit" value="Login"></input>
-                            {/* <FaGoogle></FaGoogle> <input  style={{ backgroundColor: " #FF3811" }} className="btn border-0" type="submit" value=""></input> */}
-                            <button onClick={handleGoogleSignIn}  className="btn btn-outline btn-info mt-4"><FaGoogle></FaGoogle></button>
                         </div>
                     </form>
-                    {/* <button className='mb-2' variant="outline-primary"> Login with Google</button> */}
                     <p className='text-center '>New to Genius Car <Link className=' text-orange-600 font-bold ' to='/signUp'>Sign Up</Link></p>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
