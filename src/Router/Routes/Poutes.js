@@ -3,6 +3,7 @@ import Checkout from "../../Pages/Checkout/Checkout";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Orders from "../../Pages/Orders/Orders";
+import Reviews from "../../Pages/Reviews/Reviews";
 import SignUp from "../../Pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
     {
       path:'/orders',
       element:<PrivateRoute><Orders></Orders></PrivateRoute>
+    },
+    {
+      path:'/reviews',
+      element:<PrivateRoute><Reviews></Reviews></PrivateRoute>
     }
   ]
   }
