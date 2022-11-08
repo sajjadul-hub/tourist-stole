@@ -25,14 +25,7 @@ const Checkout = () => {
         }
         console.log(order);
 
-        //         if(phone.length > 10){
-        // alert('Phone number should be 10 characters or longher')
-        //         }
-        //         else{
-
-        //         }
-
-        fetch('https://genius-car-server-silk.vercel.app/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -55,8 +48,9 @@ const Checkout = () => {
     return (
         <div>
             <form onSubmit={handlePlaceOrder}>
-                <h2 className='text-4xl'>You are about order: {title}</h2>
-                <h4 className='text-3xl'> Price: ${price}</h4>
+                <h2 className='text-4xl font-semibold text-cyan-400 text-center'>Service : {title}</h2>
+                <h4 className='text-3xl text-center mt-2 font-semibold text-cyan-400 mb-12'> Price: ${price}</h4>
+                <div className=' border-2 shadow-slate-400 p-6 mb-12 bg-slate-300 rounded-lg '>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                     <input name='firstName' type="text" placeholder="First name" className="input w-full input-bordered" />
                     <input name='lastName' type="text" placeholder="Last name " className="input w-full input-bordered" />
@@ -64,7 +58,8 @@ const Checkout = () => {
                     <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
                 </div>
                 <textarea name='message' className="textarea textarea-bordered h-24 w-full my-6" placeholder="Your massage"></textarea>
-                <input className='btn border-0 mb-4' style={{ backgroundColor: " #FF3811" }} type='submit' value='Place your order'></input>
+                <input className='btn border-0  w-full bg-cyan-400 mb-4'type='submit' value='Place your service'></input>
+                </div>
             </form>
         </div>
     );

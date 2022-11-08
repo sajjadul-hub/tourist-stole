@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { setAuthToken } from '../../api/api';
-import login from '../../assets/images/login/login.svg'
+import login from '../../assets/images/login/login.jpeg'
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 const SignUp = () => {
     const { createUser } = useContext(AuthContext)
@@ -30,8 +30,8 @@ const SignUp = () => {
     return (
         <div className="hero w-full my-20">
             <div className="hero-content grid md:grid-cols-2 gap-12 flex-col lg:flex-row">
-                <div className=" ml-20 text-center lg:text-left">
-                    <img className='w-3/4' src={login} alt=''></img>
+                <div className="pr-6 mb-64 text-center lg:text-left">
+                    <img style={{height:"500px",width:"500px"}} className='' src={login} alt=''></img>
                 </div>
 
                 <div style={{ fontFamily: "Inter" }} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-16">
@@ -56,10 +56,10 @@ const SignUp = () => {
                             <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <input style={{ backgroundColor: " #FF3811" }} className="btn border-0" type="submit" value="Sign Up"></input>
+                            <input  className="btn border-0 bg-cyan-400" type="submit" value="Sign Up"></input>
                         </div>
                     </form>
-                    <p className='text-center '>Already Have an Account Click <Link className=' text-orange-600 font-bold ' to='/login'>Login</Link></p>
+                    <p className='text-center '>Already Have an Account Click <Link className=' text-cyan-400 font-bold ' to='/login'>Login</Link></p>
                 </div>
             </div>
         </div>

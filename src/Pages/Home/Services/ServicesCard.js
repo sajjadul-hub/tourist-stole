@@ -12,7 +12,7 @@ const ServicesCard = ({service}) => {
     <p className=' text-slate-600 mb-8'>Description: {description.slice(0, 100) + '...'}</p>
     <div className="card-actions justify-end">
       <Link to={`/checkout/${_id}`}>
-      <button  className="btn  border-0 w-72  bg-sky-400">Check Out</button>
+      <button  className="btn  border-0 w-72  bg-sky-400">Booking Now</button>
       </Link>
      
     </div>

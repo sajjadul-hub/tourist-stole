@@ -5,12 +5,12 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
     const [orderService, setOrderService] = useState({})
 
     useEffect(() => {
-        fetch(`https://genius-car-server-silk.vercel.app/services/${service}`)
+        fetch(`http://localhost:5000/services/${service}`)
             .then(res => res.json())
             .then(data => setOrderService(data));
     }, [service])
     return (
-        <tr>
+        <tr className=''>
             <th>
                 <label>
                     <button onClick={() => handleDelete(_id)} className="btn btn-circle btn-outline">
@@ -38,7 +38,6 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
                 <br />
                 <span className="badge badge-ghost badge-sm">${price}</span>
             </td>
-            <td>Purple</td>
             <th>
                 <button
                     onClick={() => handleStatusUpdate(_id)}

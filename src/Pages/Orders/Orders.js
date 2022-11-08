@@ -7,7 +7,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`https://genius-car-server-silk.vercel.app/orders?email=${user?.email}`,{
+        fetch(`http://localhost:5000/orders?email=${user?.email}`,{
             headers:{
                 authorication:`Bearer ${localStorage.getItem('genius')}`
             }
@@ -26,7 +26,7 @@ const Orders = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if(proceed){
-            fetch(`https://genius-car-server-silk.vercel.app/orders/${id}`, {
+            fetch(`http://localhost:5000/orders/${id}`, {
                 method: 'DELETE',
                     headers:{
                         authorication:`Bearer ${localStorage.getItem('genius')}`
@@ -45,7 +45,7 @@ const Orders = () => {
     }
 
     const handleStatusUpdate = id => {
-        fetch(`https://genius-car-server-silk.vercel.app/orders/${id}`, {
+        fetch(`http://localhost:5000/orders/${id}`, {
             method: 'PATCH', 
             headers: {
                 'content-type': 'application/json',
@@ -69,17 +69,16 @@ const Orders = () => {
 
     return (
         <div>
-            <h2 className="text-5xl mb-6">You have {orders.length} Orders</h2>
-            <div className="overflow-x-auto w-full">
+            <h2 className="text-5xl mb-12 text-center text-sky-400">You have {orders.length} services</h2>
+            <div className="overflow-x-auto w-full mb-12">
                 <table className="table w-full">
                     <thead>
                         <tr>
                             <th>
                             </th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
+                            <th>Person</th>
+                            <th>Services</th>
+                            <th>Approving</th>
                         </tr>
                     </thead>
                     <tbody>

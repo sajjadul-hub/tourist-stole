@@ -49,7 +49,10 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-outline btn-warning">Appointment</button>
+                <img className='h-8 rounded-full' src={
+                    user?.photoURL
+
+                } alt=''></img>
             </div>
         </div>
     );

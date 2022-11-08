@@ -1,4 +1,5 @@
 import Main from "../../LayOut/Main";
+import Allservices from "../../Pages/Allservices/Allservices";
 import Checkout from "../../Pages/Checkout/Checkout";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
     {
       path:'/checkout/:id',
       element:<PrivateRoute><Checkout></Checkout></PrivateRoute>,
-      loader:({params})=>fetch(`https://genius-car-server-silk.vercel.app/services/${params.id}`)
+      loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
     },
     {
       path:'/orders',
@@ -38,6 +39,12 @@ const router = createBrowserRouter([
       path:'/reviews',
       element:<PrivateRoute><Reviews></Reviews></PrivateRoute>
     }
+    ,
+    {
+      path:'/services',
+      element:<PrivateRoute><Allservices></Allservices></PrivateRoute>
+    }
+
   ]
   }
 ])

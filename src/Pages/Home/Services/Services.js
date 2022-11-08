@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
@@ -6,7 +7,7 @@ const Services = () => {
     
     
     useEffect(()=>{
-        fetch('https://genius-car-server-silk.vercel.app/services')
+        fetch('http://localhost:5000/services')
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[]);
@@ -25,6 +26,7 @@ const Services = () => {
             services.map(service=><ServicesCard key={service._id} service={service}></ServicesCard>)
          }
         </div>
+       <div className='flex justify-center'> <Link to='/services'className=' btn  border-0 bg-sky-400'>See all Services</Link></div>
        </div>
     );
 };
