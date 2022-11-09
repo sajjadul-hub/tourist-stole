@@ -74,9 +74,11 @@ const Reviews = () => {
             <div className="overflow-x-auto w-full mb-12">
                 <table className="table w-full">
                     <thead>
-                        <tr>
-                            <th>Person</th>
+                        <tr >
+                            <th>Remove</th>
+                            <th>Services</th>
                             <th>Reviews Details</th>
+
                         </tr>
                     </thead>
                     <tbody>
