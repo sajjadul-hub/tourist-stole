@@ -3,11 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { setAuthToken } from '../../api/api';
 import login from '../../assets/images/login/login.jpeg'
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import UseTitle from '../../Hooks/UseTitle';
 const SignUp = () => {
     const { createUser } = useContext(AuthContext)
-    const location=useLocation();
-    const navigate=useNavigate();
-    const from=location.state?.from?.pathname|| '/';
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+    UseTitle('Sign Up');
 
     const handleLogin = event => {
         event.preventDefault();
@@ -23,15 +25,15 @@ const SignUp = () => {
                 console.log(user);
                 setAuthToken(user);
                 form.reset();
-                navigate(from,{replace:true});
+                navigate(from, { replace: true });
             })
-            .catch(error=>console.log(error))
+            .catch(error => console.log(error))
     }
     return (
         <div className="hero w-full my-20">
             <div className="hero-content grid md:grid-cols-2 gap-12 flex-col lg:flex-row">
                 <div className="pr-6 mb-64 text-center lg:text-left">
-                    <img style={{height:"500px",width:"500px"}} className='' src={login} alt=''></img>
+                    <img style={{ height: "500px", width: "500px" }} className='' src={login} alt=''></img>
                 </div>
 
                 <div style={{ fontFamily: "Inter" }} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-16">
@@ -56,7 +58,7 @@ const SignUp = () => {
                             <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <input  className="btn border-0 bg-cyan-400" type="submit" value="Sign Up"></input>
+                            <input className="btn border-0 bg-cyan-400" type="submit" value="Sign Up"></input>
                         </div>
                     </form>
                     <p className='text-center '>Already Have an Account Click <Link className=' text-cyan-400 font-bold ' to='/login'>Login</Link></p>

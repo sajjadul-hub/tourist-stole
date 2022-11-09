@@ -1,12 +1,14 @@
 import React from 'react';
 import { FaStar } from "react-icons/fa";
 import { Link, useLoaderData } from 'react-router-dom';
+import UseTitle from '../../../Hooks/UseTitle';
 const rating = {
   rating: "4.5"
 }
 
 const Details = () => {
     const { _id,img,price,title,description}=useLoaderData();
+    UseTitle('Details')
     return (
         <div className="card card-compact bg-base-100 shadow-xl mb-8">
       <figure><img className='w-full h-80' src={img} alt="Shoes" /></figure>

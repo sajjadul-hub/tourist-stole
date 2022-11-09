@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Card = ({ order, handleDelete, handleStatusUpdate }) => {
     const { _id, serviceName, price, service, message, status } = order;
     const [orderService, setOrderService] = useState({});
-
+console.log(price);
     useEffect(() => {
         fetch(`http://localhost:5000/services/${service}`)
             .then(res => res.json())
@@ -29,7 +29,6 @@ const Card = ({ order, handleDelete, handleStatusUpdate }) => {
                 </div>
                 <div>
                     <div className="font-bold"> {serviceName}</div>
-                    <div className="text-sm opacity-50">${price}</div>
                 </div>
             </div>
         </td>

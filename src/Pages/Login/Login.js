@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login1 from '../../assets/images/login/login.jpeg'
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import UseTitle from '../../Hooks/UseTitle';
 import SocialLogin from '../SocialLogin/SocialLogin';
 const Login = () => {
-    const { login} = useContext(AuthContext);
-
+    const { login } = useContext(AuthContext);
+    UseTitle('Login');
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
@@ -47,7 +48,7 @@ const Login = () => {
         <div className="hero w-full my-20">
             <div className="hero-content grid md:grid-cols-2 gap-12 flex-col lg:flex-row">
                 <div className=" ml-20 text-center lg:text-left mb-64">
-                <img style={{height:"500px",width:"500px"}} className='' src={login1} alt=''></img>
+                    <img style={{ height: "500px", width: "500px" }} className='' src={login1} alt=''></img>
                 </div>
 
                 <div style={{ fontFamily: "Inter" }} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-16">
@@ -69,7 +70,7 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input  className="btn border-0 bg-cyan-400" type="submit" value="Login"></input>
+                            <input className="btn border-0 bg-cyan-400" type="submit" value="Login"></input>
                         </div>
                     </form>
                     <SocialLogin></SocialLogin>
