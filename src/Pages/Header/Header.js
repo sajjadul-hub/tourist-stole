@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../src/assets/logo.png'
+import { FaUser } from "react-icons/fa";
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -14,8 +15,8 @@ const Header = () => {
         {
             user?.email ?
                 <>
-                    <li className='font-semibold mr-4 '><Link to='/reviews'>Add reviews</Link></li>
-                    <li className='font-semibold mr-4 '><Link to='/orders'>Add service</Link></li>
+                    <li className='font-semibold mr-4 '><Link to='/reviews'>All reviews</Link></li>
+                    <li className='font-semibold mr-4 '><Link to='/orders'>Booking service</Link></li>
                     <li className='font-semibold' onClick={handleLogOut}><Link>Log Out</Link></li>
                 </>
                 :
@@ -25,6 +26,7 @@ const Header = () => {
 
                 </>
         }
+        <li className='font-semibold ml-4'><Link to='/faq'>FAQ</Link></li>
     </>
 
     return (
@@ -35,7 +37,7 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                     {menuItems}
+                        {menuItems}
                     </ul>
                 </div>
                 <Link className="btn btn-ghost normal-case text-xl" to='/'>
@@ -49,10 +51,31 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <img className='h-8 rounded-full' src={
-                    user?.photoURL
+                <div>
+                    {
+                        user?.photoURL?
+                            <>
+                                <div className='flex gap-2'>
+                                    <img className='h-8 rounded-full' src={user?.photoURL} alt=''></img>
+                                    <p className='text-lg font-semibold'>{user?.displayName}</p>
+                                </div>
+                            </>
+                            :
 
-                } alt=''></img>
+                           <>
+                           {
+                            user?.email?
+                            <>
+                           <div className=' bg-slate-200 p-2 rounded-full'>
+                           <FaUser></FaUser>
+                           </div>
+                            </>
+                            :
+                            ""
+                           }
+                           </>
+                    }
+                </div>
             </div>
         </div>
     );

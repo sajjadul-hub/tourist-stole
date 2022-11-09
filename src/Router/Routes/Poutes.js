@@ -1,6 +1,7 @@
 import Main from "../../LayOut/Main";
 import Allservices from "../../Pages/Allservices/Allservices";
 import Checkout from "../../Pages/Checkout/Checkout";
+import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Orders from "../../Pages/Orders/Orders";
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
     {
       path:'/services',
       element:<PrivateRoute><Allservices></Allservices></PrivateRoute>
+    }
+    ,
+    {
+      path:'/faq',
+      element:<Faq></Faq>
     }
 
   ]
