@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Card = ({ order, handleDelete, handleStatusUpdate }) => {
-    const { _id, serviceName, phone, customer, price, service, message, status } = order;
+    const { _id, serviceName, price, service, message, status } = order;
     const [orderService, setOrderService] = useState({});
 
     useEffect(() => {
@@ -34,8 +34,13 @@ const Card = ({ order, handleDelete, handleStatusUpdate }) => {
             </div>
         </td>
         <td>
-            <span className="">{message}</span>
+            <span>{message}</span>
         </td>
+        <th>
+                <button
+                    onClick={() => handleStatusUpdate(_id)}
+                    className="btn btn-ghost btn-xs">{status ? status : 'pending'}</button>
+            </th>
     </tr>
     );
 };

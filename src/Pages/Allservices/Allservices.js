@@ -12,7 +12,7 @@ const Allservices = () => {
         .then(data=>setServices(data))
     },[]);
     return (
-        <div>
+        <div className=' grid lg:grid-cols-3 gap-4'>
              {
             services.map(service=><ItemCard key={service._id} service={service}></ItemCard>)
          }

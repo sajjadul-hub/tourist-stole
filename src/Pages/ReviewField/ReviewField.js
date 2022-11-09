@@ -32,7 +32,7 @@ const ReviewField = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Order placed successfully')
+                    alert('Review successfully add')
                     form.reset();
 
                 }

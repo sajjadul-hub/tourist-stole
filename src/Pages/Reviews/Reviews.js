@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
-import OrderRow from '../Orders/OrderRow';
 import Card from './Card';
 
 const Reviews = () => {
@@ -78,6 +77,7 @@ const Reviews = () => {
                             <th>Remove</th>
                             <th>Services</th>
                             <th>Reviews Details</th>
+                            <th>Updata</th>
 
                         </tr>
                     </thead>
