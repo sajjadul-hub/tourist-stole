@@ -8,7 +8,7 @@ const Reviews = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
             headers: {
                 authorication: `Bearer ${localStorage.getItem('genius')}`
             }
@@ -27,7 +27,7 @@ const Reviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`http://localhost:5000/reviews/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorication: `Bearer ${localStorage.getItem('genius')}`
@@ -46,7 +46,7 @@ const Reviews = () => {
     }
 
     const handleStatusUpdate = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`http://localhost:5000/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

@@ -3,6 +3,7 @@ import Allservices from "../../Pages/Allservices/Allservices";
 import Checkout from "../../Pages/Checkout/Checkout";
 import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home/Home";
+import Details from "../../Pages/Home/Services/Details";
 import Login from "../../Pages/Login/Login";
 import Orders from "../../Pages/Orders/Orders";
 import ReviewField from "../../Pages/ReviewField/ReviewField";
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
     {
       path:'/checkout/:id',
       element:<PrivateRoute><Checkout></Checkout></PrivateRoute>,
+      loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+    },
+    {
+      path:'/details/:id',
+      element:<PrivateRoute><Details></Details></PrivateRoute>,
       loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
     },
     {
