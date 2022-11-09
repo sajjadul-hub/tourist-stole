@@ -1,9 +1,5 @@
 import React from 'react';
-import { FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-const rating = {
-  rating: "4.5"
-}
 const ItemCard = ({ service }) => {
   const { _id, img, price, title, description } = service;
   return (

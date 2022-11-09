@@ -1,4 +1,19 @@
 # Getting Started with Create React App
+### `welcome to talimul github code `
+ Which vaiha see this code i like to say before this assignment i do two assignment but  i don't got my hopeful number and those two assig two common incorrent thing is i don't got mark in builed point sectetion but those two assignment i do or i did wirte builde point in bootomof readme file .so this time i wirte this in top of readme file.     
+
+### `1st step`
+I install npm all requriment that simpllyneed in website.there are react router,firebase,tailwind ,daiusy and react photo view ,react icon
+
+### `2nd step`
+In this project there are so many file but in src file this is many file in project .so many components in src 
+
+### `About this website`
+This site made for personal turiset guider
+he provider so many interting place which are realy wounderful
+
+### `live link:`
+[]()
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -69,5 +84,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### `live link:`
-[ https://genius-car-61acb.web.app]( https://genius-car-61acb.web.app)
+
+
