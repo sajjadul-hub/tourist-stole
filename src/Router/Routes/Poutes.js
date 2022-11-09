@@ -5,6 +5,7 @@ import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Orders from "../../Pages/Orders/Orders";
+import ReviewField from "../../Pages/ReviewField/ReviewField";
 import Reviews from "../../Pages/Reviews/Reviews";
 import SignUp from "../../Pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -50,7 +51,12 @@ const router = createBrowserRouter([
       path:'/faq',
       element:<Faq></Faq>
     }
-
+    ,
+    {
+      path:'/review/:id',
+      element:<PrivateRoute><ReviewField></ReviewField></PrivateRoute>,
+      loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+    }
   ]
   }
 ])

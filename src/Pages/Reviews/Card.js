@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
-    const { _id, serviceName, phone, customer, price, service, status } = order;
-    const [orderService, setOrderService] = useState({})
+const Card = ({ order, handleDelete, handleStatusUpdate }) => {
+    const { _id, serviceName, phone, customer, price, service,message,status } = order;
+    const [orderService, setOrderService] = useState({});
 
     useEffect(() => {
         fetch(`http://localhost:5000/services/${service}`)
@@ -10,7 +10,8 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
             .then(data => setOrderService(data));
     }, [service])
     return (
-        <tr className=''>
+        <div>
+             <tr className=''>
             <th>
                 <label>
                     <button onClick={() => handleDelete(_id)} className="btn btn-circle btn-outline">
@@ -38,13 +39,9 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
                 <br />
                 <span className="badge badge-ghost badge-sm">${price}</span>
             </td>
-            <th>
-                <button
-                    onClick={() => handleStatusUpdate(_id)}
-                    className="btn btn-ghost btn-xs">{status ? status : 'pending'}</button>
-            </th>
         </tr>
+        </div>
     );
 };
 
-export default OrderRow;
+export default Card;
