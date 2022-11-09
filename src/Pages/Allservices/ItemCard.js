@@ -12,7 +12,9 @@ const ItemCard = ({service}) => {
   <div className="card-body">
    <div className='flex justify-between'>
    <h2 className="card-title text-4xl">{title}</h2>
-    <span className=' text-base'><FaStar></FaStar>{rating.rating}</span>
+  <div className=' flex gap-2'>
+  <FaStar className=' text-yellow-400 mt-1'></FaStar> <span className=' text-base mb-2'>{rating.rating}</span>
+  </div>
    </div>
     <p className=' text-slate-600 mb-8 text-2xl font-semibold'>Description:<br/> <span className='text-xl'>{description}</span></p>
     <div className="card-actions justify-between">
