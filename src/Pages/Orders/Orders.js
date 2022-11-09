@@ -79,6 +79,7 @@ const Orders = () => {
                             <th>Person</th>
                             <th>Services</th>
                             <th>Approving</th>
+                            <th>Reviews</th>
                         </tr>
                     </thead>
                     <tbody>

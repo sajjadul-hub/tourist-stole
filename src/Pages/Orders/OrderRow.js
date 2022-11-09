@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
     const { _id, serviceName, phone, customer, price, service, status } = order;
@@ -42,6 +43,11 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
                 <button
                     onClick={() => handleStatusUpdate(_id)}
                     className="btn btn-ghost btn-xs">{status ? status : 'pending'}</button>
+            </th>
+            <th>
+                <button>
+                    <Link>Review</Link>
+                    </button>
             </th>
         </tr>
     );
