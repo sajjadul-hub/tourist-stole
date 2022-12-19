@@ -4,7 +4,7 @@ import logo from '../../../src/assets/logo.png'
 const Footer = () => {
   return (
     <div className='footer'>
-      <footer className="footer pl-32 py-28  text-white">
+      <footer className="footer pl-32 py-28  text-white  rounded-t-lg">
         <div>
           <img className='h-20 w-20' src={logo} alt=''></img>
           <p>Traveller Ltd.<br />Providing best traveling experience since 2002</p>

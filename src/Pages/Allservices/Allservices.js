@@ -7,7 +7,7 @@ const Allservices = () => {
     
     
     useEffect(()=>{
-        fetch('http://localhost:5000/allservices')
+        fetch('https://traveller-server.vercel.app/allservices')
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[]);

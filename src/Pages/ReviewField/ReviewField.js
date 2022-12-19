@@ -20,7 +20,7 @@ const ReviewField = () => {
         }
         console.log(order);
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://traveller-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

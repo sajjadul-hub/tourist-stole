@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 ### `welcome to talimul github code `
- Which vaiha see this code i like to say some thing that before this assignment i do two assignment but  i don't got my hopeful number and thoses two assignment two common incorrent thing is i don't got mark in bullied points sectetion but thoses two assignment i do or i did wirte bullied points in bootomof readme file .so this time i wirte this in top of readme file.     
+ Which vaiha see this code i like to say some thing that before this assignment i do two assignment but  i don't got my hopeful number and thoses two assignment two common incorrent thing is i don't got mark in bullied points sectetion but thoses two assignment i do or i did wirte bullied points in bottom of readme file .so this time i wirte this in top of readme file.     
 
 ### `1st step`
 I install npm all requriment that simpllyneed in website.there are react router,firebase,tailwind ,daiusy and react photo view ,react icon
@@ -9,8 +9,8 @@ I install npm all requriment that simpllyneed in website.there are react router,
 In this project there are so many file but in src file this is many file in project .so many components in src 
 
 ### `About this website`
-This site made for personal turiset guider
-he provider so many interting place which are realy wounderful
+This site made for personal tourist  guider
+he provide so many interesting place which are realy wounderful
 
 ### `live link:`
 []()
