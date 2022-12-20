@@ -43,7 +43,6 @@ const Orders = () => {
             })
         }
     }
-
     const handleStatusUpdate = id => {
         fetch(`https://traveller-server.vercel.app/orders/${id}`, {
             method: 'PATCH', 
@@ -69,7 +68,7 @@ const Orders = () => {
 
     return (
         <div>
-            <h2 className="text-5xl mb-12 text-center text-sky-400">You have {orders.length} services</h2>
+            <h2 className="text-5xl mb-12 text-center text-sky-400">You have {orders.length} Booking</h2>
             <div className="overflow-x-auto w-full mb-12">
                 <table className="table w-full">
                     <thead>

@@ -1,46 +1,40 @@
 import React, { useEffect, useState } from 'react';
-
+import { FaRegWindowClose } from "react-icons/fa";
 const Card = ({ order, handleDelete, handleStatusUpdate }) => {
     const { _id, serviceName, price, service, message, status } = order;
     const [orderService, setOrderService] = useState({});
-console.log(price);
+    console.log(price);
     useEffect(() => {
         fetch(`https://traveller-server.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => setOrderService(data));
     }, [service])
     return (
-        <tr className=''>
-        <th>
-            <label>
-                <button onClick={() => handleDelete(_id)} className="btn btn-circle btn-outline">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </label>
-        </th>
-        <td>
-            <div className="flex items-center space-x-3">
-                <div className="avatar">
-                    <div className="rounded w-24 h-24">
+        <div>
+            <div className="card lg:card-side mb-5 bg-base-100 shadow-xl flex justify-between">
+                <div className="avatar flex items-center ml-5">
+                    <div className="w-24 h-24 rounded-full">
                         {
                             orderService?.img &&
                             <img src={orderService.img} alt="Avatar Tailwind CSS Component" />}
                     </div>
                 </div>
-                <div>
-                    <div className="font-bold"> {serviceName}</div>
+                <div className="card-body">
+                    <h2 className="card-title">{serviceName}</h2>
+                    <p>{message}</p>
+                    <button
+                        onClick={() => handleStatusUpdate(_id)}
+                        className=" bg-blue-300 px-3  py-1 text-white font-semibold rounded-lg w-44">Edit Comment</button>
+                </div>
+                <div className="card-actions justify-end">
+                    <FaRegWindowClose onClick={() => handleDelete(_id)}></FaRegWindowClose>
+
+
                 </div>
             </div>
-        </td>
-        <td>
-            <span>{message}</span>
-        </td>
-        <th>
-                <button
-                    onClick={() => handleStatusUpdate(_id)}
-                    className="btn btn-ghost btn-xs">{status ? status : 'pending'}</button>
-            </th>
-    </tr>
+
+        </div>
+
     );
 };
 

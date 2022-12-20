@@ -71,19 +71,7 @@ const Reviews = () => {
     return (
         <div>
             <h2 className="text-5xl mb-12 text-center text-sky-400">You Review {orders.length} services</h2>
-            <div className="overflow-x-auto w-full mb-12">
-                <table className="table w-full">
-                    <thead>
-                        <tr >
-                            <th>Remove</th>
-                            <th>Services</th>
-                            <th>Reviews Details</th>
-                            <th>Updata</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
+            {
                             orders.map(order => <Card
                                 key={order._id}
                                 order={order}
@@ -91,9 +79,6 @@ const Reviews = () => {
                                 handleStatusUpdate={handleStatusUpdate}
                             ></Card>)
                         }
-                    </tbody>
-                </table>
-            </div>
         </div>
     );
 };
