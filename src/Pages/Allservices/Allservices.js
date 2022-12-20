@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ServicesCard from '../Home/Services/ServicesCard';
 import ItemCard from './ItemCard';
 
 const Allservices = () => {
@@ -7,7 +6,7 @@ const Allservices = () => {
     
     
     useEffect(()=>{
-        fetch('https://traveller-server.vercel.app/allservices')
+        fetch('https://traveller-server-talimul212.vercel.app/allservices')
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[]);

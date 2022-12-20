@@ -8,7 +8,7 @@ const Reviews = () => {
     const [orders, setOrders] = useState([])
     UseTitle('Reviews');
     useEffect(() => {
-        fetch(`https://traveller-server.vercel.app/reviews?email=${user?.email}`, {
+        fetch(`https://traveller-server-talimul212.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 authorication: `Bearer ${localStorage.getItem('genius')}`
             }
@@ -27,7 +27,7 @@ const Reviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if (proceed) {
-            fetch(`https://traveller-server.vercel.app/reviews/${id}`, {
+            fetch(`https://traveller-server-talimul212.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorication: `Bearer ${localStorage.getItem('genius')}`
@@ -46,7 +46,7 @@ const Reviews = () => {
     }
 
     const handleStatusUpdate = id => {
-        fetch(`https://traveller-server.vercel.app/reviews/${id}`, {
+        fetch(`https://traveller-server-talimul212.vercel.app/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
@@ -70,7 +70,7 @@ const Reviews = () => {
 
     return (
         <div>
-            <h2 className="text-5xl mb-12 text-center text-sky-400">You Review {orders.length} services</h2>
+            <h2 className="text-4xl mb-12 text-center text-sky-400">You have Reviewed {orders.length} services</h2>
             {
                             orders.map(order => <Card
                                 key={order._id}

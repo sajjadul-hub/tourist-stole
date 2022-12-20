@@ -3,7 +3,7 @@ export const setAuthToken=(user)=>{
         email: user.email
     }
     // get jwt token
-    fetch('https://traveller-server.vercel.app/jwt', {
+    fetch('https://traveller-server-talimul212.vercel.app/jwt', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

@@ -7,7 +7,7 @@ const Services = () => {
     
     
     useEffect(()=>{
-        fetch('https://traveller-server.vercel.app/services')
+        fetch('https://traveller-server-talimul212.vercel.app/services')
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[]);

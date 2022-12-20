@@ -7,7 +7,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`https://traveller-server.vercel.app/orders?email=${user?.email}`,{
+        fetch(`https://traveller-server-talimul212.vercel.app/orders?email=${user?.email}`,{
             headers:{
                 authorication:`Bearer ${localStorage.getItem('genius')}`
             }
@@ -26,7 +26,7 @@ const Orders = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if(proceed){
-            fetch(`https://traveller-server.vercel.app/orders/${id}`, {
+            fetch(`https://traveller-server-talimul212.vercel.app/orders/${id}`, {
                 method: 'DELETE',
                     headers:{
                         authorication:`Bearer ${localStorage.getItem('genius')}`
@@ -44,7 +44,7 @@ const Orders = () => {
         }
     }
     const handleStatusUpdate = id => {
-        fetch(`https://traveller-server.vercel.app/orders/${id}`, {
+        fetch(`https://traveller-server-talimul212.vercel.app/orders/${id}`, {
             method: 'PATCH', 
             headers: {
                 'content-type': 'application/json',

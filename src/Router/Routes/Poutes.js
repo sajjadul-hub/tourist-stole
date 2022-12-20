@@ -32,12 +32,12 @@ const router = createBrowserRouter([
     {
       path:'/checkout/:id',
       element:<PrivateRoute><Checkout></Checkout></PrivateRoute>,
-      loader:({params})=>fetch(`https://traveller-server.vercel.app/services/${params.id}`)
+      loader:({params})=>fetch(`https://traveller-server-talimul212.vercel.app/services/${params.id}`)
     },
     {
       path:'/details/:id',
       element:<PrivateRoute><Details></Details></PrivateRoute>,
-      loader:({params})=>fetch(`https://traveller-server.vercel.app/services/${params.id}`)
+      loader:({params})=>fetch(`https://traveller-server-talimul212.vercel.app/services/${params.id}`)
     },
     {
       path:'/orders',
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
     {
       path:'/review/:id',
       element:<PrivateRoute><ReviewField></ReviewField></PrivateRoute>,
-      loader:({params})=>fetch(`https://traveller-server.vercel.app/services/${params.id}`)
+      loader:({params})=>fetch(`https://traveller-server-talimul212.vercel.app/services/${params.id}`)
     }
   ]
   }
