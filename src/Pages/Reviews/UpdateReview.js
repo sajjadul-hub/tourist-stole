@@ -24,7 +24,7 @@ const UpdateReview = () => {
         console.log(order);
 
         fetch('https://traveller-server-talimul212.vercel.app/reviews', {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
                 authorication: `Bearer ${localStorage.getItem('genius')}`

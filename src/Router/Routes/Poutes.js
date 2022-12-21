@@ -67,7 +67,7 @@ const router = createBrowserRouter([
     {
       path:'/update/:id',
       element:<PrivateRoute><UpdateReview></UpdateReview> </PrivateRoute>,
-      loader:({params})=>fetch(`https://traveller-server-talimul212.vercel.app/services/${params.id}`)
+      loader:({params})=>fetch(` https://traveller-server-talimul212.vercel.app/update/${params.id}`)
     }
   ]
   }
