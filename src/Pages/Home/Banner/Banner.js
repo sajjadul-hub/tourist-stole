@@ -6,8 +6,8 @@ const Banner = () => {
         <div className='text-center'>
             <div className="card image-full w-auto">
                 <figure><img className='w-full' src={bannerImg} alt="" /></figure>
-                <div className="card-body">
-                    <h2 className='  text-5xl font-bold text-blue-200 mt-36'> Find Your Next Adventure <br />
+                <div className="card-body flex justify-center items-center">
+                    <h2 className=' text-2xl lg:text-5xl font-bold text-blue-200 '> Find Your Next Adventure <br />
                       With Traveller</h2>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const ReviewField = () => {
-    const { _id, title, price, img } = useLoaderData();
+    const { _id, title,img } = useLoaderData();
     const { user } = useContext(AuthContext);
     const handlePlaceOrder = event => {
         event.preventDefault();
@@ -35,7 +35,6 @@ const ReviewField = () => {
                 if (data.acknowledged) {
                     alert('Review successfully add')
                     form.reset();
-
                 }
             })
             .catch(er => console.error(er));

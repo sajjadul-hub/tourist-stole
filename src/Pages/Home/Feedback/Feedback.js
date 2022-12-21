@@ -11,7 +11,7 @@ const Feedback = () => {
                 <span className='font-bold' > Smart Feedback</span></h1>
             <div className="carousel h-80 w-full mb-12 ">
                 <div id="slide1" className="carousel-item relative w-full">
-                    <div className=' bg-zinc-100 p-4 rounded-xl m-6'>
+                    <div className=' bg-zinc-100 p-4 rounded-xl m-6  '>
                         <center> <img src={client1} className="w-16 h-16 mb-4" alt='' /></center>
                         <div className="review_text text-center">
                             <ul className="rateing flex justify-center">
@@ -21,7 +21,7 @@ const Feedback = () => {
                                 <li><a href="/"><FaStar className=' text-yellow-400'></FaStar></a></li>
                                 <li><a href="/"><FaStar className=' text-slate-300'></FaStar></a></li>
                             </ul>
-                            <p>We would recommend Traveller and will be using them again in the future
+                            <p className='hidden lg:block'>We would recommend Traveller and will be using them again in the future
                                 Kristy and he gave us excellent service
                                 And have an amazing time</p>
                             <h5 className=' font-bold mt-5'>Rosalina D. Williamson</h5>
@@ -37,7 +37,7 @@ const Feedback = () => {
                                 <li><a href="/"><FaStar className=' text-yellow-400'></FaStar></a></li>
                                 <li><a href="/"><FaStar className=' text-slate-300'></FaStar></a></li>
                             </ul>
-                            <p>We would recommend Traveller and will be using them again in the future
+                            <p className='hidden lg:block'>We would recommend Traveller and will be using them again in the future
                                 Kristy and he gave us excellent service
                                 And have an amazing time</p>
                             <h5 className=' font-bold mt-5'> Nicola Hanson</h5>
@@ -59,7 +59,7 @@ const Feedback = () => {
                                 <li><a href="/"><FaStar className=' text-yellow-400'></FaStar></a></li>
                                 <li><a href="/"><FaStar className=' text-slate-300'></FaStar></a></li>
                             </ul>
-                            <p>We would recommend Traveller and will be using them again in the future
+                            <p className='hidden lg:block'>We would recommend Traveller and will be using them again in the future
                                 Kristy and he gave us excellent service
                                 And have an amazing time.</p>
                             <h5 className=' font-bold mt-5'>Samantha Oakes</h5>
@@ -75,7 +75,7 @@ const Feedback = () => {
                                 <li><a href="/"><FaStar className=' text-yellow-400'></FaStar></a></li>
                                 <li><a href="/"><FaStar className=' text-slate-300'></FaStar></a></li>
                             </ul>
-                            <p>We would recommend Traveller and will be using them again in the future
+                            <p className='hidden lg:block'>We would recommend Traveller and will be using them again in the future
                                 Kristy and he gave us excellent service
                                 And have an amazing time</p>
                             <h5 className=' font-bold mt-5'> Maria Veronica Caparas</h5>

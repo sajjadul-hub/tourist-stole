@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { FaRegWindowClose, FaStar } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const Card = ({ order, handleDelete, handleStatusUpdate }) => {
     const { _id, serviceName, price, service, message, ratting } = order;
     const [orderService, setOrderService] = useState({});
-    console.log(price);
     useEffect(() => {
         fetch(`https://traveller-server-talimul212.vercel.app/services/${service}`)
             .then(res => res.json())
@@ -12,8 +12,8 @@ const Card = ({ order, handleDelete, handleStatusUpdate }) => {
     return (
         <div>
             <div className="card lg:card-side mb-5 bg-base-100 shadow-xl flex justify-between">
-                <div className="avatar flex items-center ml-5">
-                    <div className="w-24 h-24 rounded-full">
+                <div className="avatar items-center ml-5 hidden lg:flex">
+                    <div className="w-24 h-24 rounded-full ">
                         {
                             orderService?.img &&
                             <img src={orderService.img} alt="Avatar Tailwind CSS Component" />}
@@ -25,9 +25,9 @@ const Card = ({ order, handleDelete, handleStatusUpdate }) => {
                     <div className='flex'>
                         <b className='mr-2'>Ratting:</b>  {ratting}<FaStar className=' text-yellow-400 mt-1 ml-1'></FaStar> 
                     </div>
-                    <button
+                    <Link to={`/update/${_id}`}
                         onClick={() => handleStatusUpdate(_id)}
-                        className=" bg-sky-400 px-3  py-1 text-white font-semibold rounded-lg w-44">Edit Comment</button>
+                        className=" bg-sky-400 px-3  py-1 text-white font-semibold rounded-lg lg:w-44  text-center">Edit Comment</Link>
                 </div>
                 <div className="card-actions justify-end">
                     <FaRegWindowClose onClick={() => handleDelete(_id)}></FaRegWindowClose>

@@ -12,13 +12,13 @@ const ServicesCard = ({service}) => {
     ];
     UseTitle('All Services')
     return (
-        <div className="card card-compact bg-base-100 shadow-xl mb-8">
+        <div className="card card-compact bg-base-100 shadow-xl mb-8 mx-3">
   <figure>
   <PhotoProvider>
       <div className="foo">
         {images.map((item, index) => (
           <PhotoView key={index} src={item}>
-            <img className=' h-52' src={item.imgSrc} alt="" />
+            <img className=' h-52 w-96' src={item.imgSrc} alt="" />
           </PhotoView>
         ))}
       </div>
@@ -28,12 +28,8 @@ const ServicesCard = ({service}) => {
     <h2 className="card-title">{title}</h2>
     <p className='text-2xl text-orange-600 font-semibold'>Price: ${price}</p>
     <p className=' text-slate-600 mb-8'>Description: {description.slice(0, 100) + '...'}</p>
-    <div className="card-actions justify-end">
-      <Link to={`/details/${_id}`}>
-      <button  className="btn  border-0 w-72  bg-sky-400">More Details</button>
+      <Link  className="btn  border-0 w bg-sky-400" to={`/details/${_id}`}>More Details
       </Link>
-     
-    </div>
   </div>
 </div>
     );

@@ -8,6 +8,7 @@ import Login from "../../Pages/Login/Login";
 import Orders from "../../Pages/Orders/Orders";
 import ReviewField from "../../Pages/ReviewField/ReviewField";
 import Reviews from "../../Pages/Reviews/Reviews";
+import UpdateReview from "../../Pages/Reviews/UpdateReview";
 import SignUp from "../../Pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
     {
       path:'/review/:id',
       element:<PrivateRoute><ReviewField></ReviewField></PrivateRoute>,
+      loader:({params})=>fetch(`https://traveller-server-talimul212.vercel.app/services/${params.id}`)
+    },
+    {
+      path:'/update/:id',
+      element:<PrivateRoute><UpdateReview></UpdateReview> </PrivateRoute>,
       loader:({params})=>fetch(`https://traveller-server-talimul212.vercel.app/services/${params.id}`)
     }
   ]
